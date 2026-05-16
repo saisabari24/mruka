@@ -13,7 +13,7 @@ export default function App() {
 
       {/* NAVBAR */}
       <nav className="fixed top-6 left-0 right-0 z-50 px-6 lg:px-12 flex justify-center">
-        <div className="w-full max-w-5xl soft-glass rounded-full px-6 md:px-8 py-3 flex justify-between items-center relative z-50">
+        <div className="w-full sm:w-auto soft-glass rounded-full px-6 md:px-8 py-3 flex justify-between items-center gap-4 md:gap-12 lg:gap-24 relative z-50">
           <a href="#home" className="flex items-center text-[#9AB8A0]">
             {!logoError ? (
               <img 
@@ -109,7 +109,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-10 flex flex-wrap justify-center items-center gap-4"
+            className="mt-10 flex flex-wrap justify-center items-center gap-4 pb-20"
           >
             <a href="#contact" className="soft-glass-strong rounded-full px-10 py-4 text-foreground font-heading text-base font-semibold hover:scale-[1.02] transition-transform inline-block">
               Start Your Project
@@ -118,6 +118,28 @@ export default function App() {
               Explore Services
             </a>
           </motion.div>
+        </div>
+
+        {/* Marquee Banner */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden bg-white/20 backdrop-blur-md border-t border-b border-white/40 py-5 z-20">
+          <div className="flex whitespace-nowrap overflow-hidden">
+            {[1, 2].map((idx) => (
+              <div key={idx} className="flex flex-shrink-0 items-center gap-12 md:gap-24 min-w-full animate-marquee px-6 md:px-12">
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Acme Corp</span>
+                <span className="text-foreground/30">•</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">GlobalBank</span>
+                <span className="text-foreground/30">•</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Nexus Tech</span>
+                <span className="text-foreground/30">•</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Alpha Industries</span>
+                <span className="text-foreground/30">•</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Pinnacle Group</span>
+                <span className="text-foreground/30">•</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Horizon Digital</span>
+                <span className="text-foreground/30">•</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
