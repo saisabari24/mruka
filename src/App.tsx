@@ -5,9 +5,10 @@ import { Menu, X, Smartphone, Layout, Cpu, CheckCircle2 } from 'lucide-react';
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [aiImageError, setAiImageError] = useState(false);
 
   return (
-    <div className="bg-[#F7F9F7] relative min-h-screen font-body text-foreground selection:bg-primary/30 selection:text-foreground">
+    <div className="bg-[#F7F9F7] relative min-h-screen font-body text-foreground selection:bg-primary/30 selection:text-foreground overflow-hidden">
       <div className="gradient-blob blob-primary" />
       <div className="gradient-blob blob-secondary" />
 
@@ -102,7 +103,7 @@ export default function App() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="mt-6 text-lg opacity-60 font-body max-w-2xl mx-auto leading-relaxed text-foreground"
           >
-            App and website development, coupled with AI-driven automation for enhanced, effortless business processes.
+            We build apps, websites, and AI workflows that save time, cut costs, and grow revenue.
           </motion.p>
 
           <motion.div 
@@ -125,17 +126,17 @@ export default function App() {
           <div className="flex whitespace-nowrap overflow-hidden">
             {[1, 2].map((idx) => (
               <div key={idx} className="flex flex-shrink-0 items-center gap-12 md:gap-24 min-w-full animate-marquee px-6 md:px-12">
-                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Acme Corp</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Fintech</span>
                 <span className="text-foreground/30">•</span>
-                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">GlobalBank</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Healthcare</span>
                 <span className="text-foreground/30">•</span>
-                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Nexus Tech</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">E-Commerce</span>
                 <span className="text-foreground/30">•</span>
-                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Alpha Industries</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">SaaS</span>
                 <span className="text-foreground/30">•</span>
-                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Pinnacle Group</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Logistics</span>
                 <span className="text-foreground/30">•</span>
-                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Horizon Digital</span>
+                <span className="text-foreground/70 font-heading text-xl md:text-2xl font-semibold tracking-tight uppercase">Real Estate</span>
                 <span className="text-foreground/30">•</span>
               </div>
             ))}
@@ -150,7 +151,7 @@ export default function App() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#AFCFB5]"></span>
             <span className="text-[10px] font-bold uppercase tracking-widest text-foreground">Our Expertise</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-heading text-foreground font-medium tracking-tight">Everything you need to scale.</h2>
+          <h2 className="text-4xl md:text-5xl font-heading text-foreground font-medium tracking-tight">Everything you need to grow.</h2>
         </div>
 
         <motion.div 
@@ -193,7 +194,7 @@ export default function App() {
             </div>
             <h3 className="font-heading text-xl font-semibold text-foreground mb-2">Web Platforms</h3>
             <p className="text-sm opacity-60 font-body leading-relaxed text-foreground">
-              Modern, high-performance websites and web apps built for speed and seamless UX.
+              Fast, modern websites and web apps built to convert visitors into customers.
             </p>
           </motion.div>
 
@@ -210,7 +211,7 @@ export default function App() {
             </div>
             <h3 className="font-heading text-xl font-semibold text-foreground mb-2">AI Workflows</h3>
             <p className="text-sm opacity-60 font-body leading-relaxed text-foreground">
-              Intelligent automation and AI integrations that eliminate manual tasks and optimize business operations.
+              Custom AI agents that eliminate repetitive work and free your team to focus on what matters.
             </p>
           </motion.div>
         </motion.div>
@@ -224,13 +225,13 @@ export default function App() {
               Work smarter, not harder <br className="hidden lg:block"/>with AI.
             </h2>
             <p className="mt-6 text-lg opacity-60 font-body leading-relaxed text-foreground">
-              We don't just build software; we engineer efficiency. Our custom AI agents and automated pipelines reduce operational overhead so your team can focus on growth.
+              We don't just build software — we remove the bottlenecks slowing your business down. Our custom AI agents and automated pipelines handle the repetitive work so your team can focus on growth.
             </p>
             <ul className="mt-8 space-y-4">
               {[
-                "Automated customer support",
-                "Data-driven business insights",
-                "Seamless software integrations"
+                "24/7 AI customer support",
+                "Real-time business insights, automatically",
+                "Connect your tools, eliminate manual handoffs"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="text-[#AFCFB5] h-5 w-5" />
@@ -245,7 +246,17 @@ export default function App() {
 
           <div className="lg:w-1/2 w-full">
             <div className="soft-glass rounded-[2rem] p-4 relative overflow-hidden aspect-square flex items-center justify-center bg-gradient-to-br from-[#AFCFB5]/10 to-[#F2E9E1]/20 border-white/40">
-              {/* Decorative AI Floating UI Elements */}
+              {/* Decorative AI Floating UI Elements or Image */}
+              {!aiImageError ? (
+                <img 
+                  src="/ai_automation.jpg" 
+                  alt="AI Automation" 
+                  className="w-full h-full object-cover rounded-[1.5rem] shadow-sm transform hover:scale-105 transition-transform duration-700 ease-out absolute inset-0 z-20 m-4" 
+                  style={{ width: 'calc(100% - 2rem)', height: 'calc(100% - 2rem)' }}
+                  onError={() => setAiImageError(true)} 
+                />
+              ) : null}
+
               <motion.div 
                 animate={{ y: [0, -15, 0], rotate: [0, 2, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -301,30 +312,34 @@ export default function App() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#AFCFB5]"></span>
             <span className="text-[10px] font-bold uppercase tracking-widest text-foreground">Featured Projects</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-heading text-foreground font-medium tracking-tight">Our recent successes.</h2>
+          <h2 className="text-4xl md:text-5xl font-heading text-foreground font-medium tracking-tight">Work we're proud of.</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
               title: "Fintech Dashboard UI",
-              desc: "A sleek, intuitive dashboard for a leading fintech startup, focusing on data visualization.",
-              tags: ["React", "Tailwind", "D3.js"]
+              desc: "A clean, data-rich dashboard for a fintech startup — turning complex data into fast decisions.",
+              tags: ["React", "Tailwind", "D3.js"],
+              image: "/fintech_dashboard.webp"
             },
             {
               title: "E-Commerce Mobile App",
               desc: "Cross-platform mobile application built for maximum conversion and speed.",
-              tags: ["React Native", "Node.js", "Stripe"]
+              tags: ["React Native", "Node.js", "Stripe"],
+              image: "/ecommerce_app.jpg"
             },
             {
               title: "AI Support Agent",
               desc: "Automated customer support AI that reduced response times by 80%.",
-              tags: ["OpenAI", "Python", "AWS"]
+              tags: ["OpenAI", "Python", "AWS"],
+              image: "/ai_support_agent.jpg"
             },
             {
               title: "Healthcare CRM",
               desc: "Secure patient management system with automated scheduling and reminders.",
-              tags: ["Next.js", "PostgreSQL", "HIPAA"]
+              tags: ["Next.js", "PostgreSQL", "HIPAA"],
+              image: "/healthcare_crm.jpg"
             }
           ].map((project, idx) => (
             <motion.div 
@@ -333,19 +348,29 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="soft-glass rounded-[2rem] overflow-hidden group cursor-pointer border-white/40"
+              className="soft-glass rounded-[2rem] overflow-hidden group cursor-pointer border-white/40 flex flex-col"
             >
-              <div className="h-48 bg-gradient-to-br from-[#AFCFB5]/20 to-[#F2E9E1]/30 relative overflow-hidden flex items-center justify-center">
-                <div className="w-full h-full p-6 flex flex-col">
-                  {/* Abstract UI representation */}
-                  <div className="flex gap-2 mb-3">
-                    <div className="h-3 w-3 rounded-full bg-foreground/20"></div>
-                    <div className="h-3 w-3 rounded-full bg-foreground/20"></div>
+              <div className="h-56 bg-gradient-to-br from-[#AFCFB5]/20 to-[#F2E9E1]/30 relative overflow-hidden flex items-center justify-center p-6">
+                {project.image ? (
+                  <div className="w-full h-full rounded-xl overflow-hidden border border-white/50 group-hover:scale-105 transition-transform duration-500 ease-out shadow-lg">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
-                  <div className="flex-1 rounded-xl bg-white/40 backdrop-blur-sm border border-white/50 w-full group-hover:scale-105 transition-transform duration-500 ease-out"></div>
-                </div>
+                ) : (
+                  <div className="w-full h-full flex flex-col">
+                    {/* Abstract UI representation */}
+                    <div className="flex gap-2 mb-3">
+                      <div className="h-3 w-3 rounded-full bg-foreground/20"></div>
+                      <div className="h-3 w-3 rounded-full bg-foreground/20"></div>
+                    </div>
+                    <div className="flex-1 rounded-xl bg-white/40 backdrop-blur-sm border border-white/50 w-full group-hover:scale-105 transition-transform duration-500 ease-out"></div>
+                  </div>
+                )}
               </div>
-              <div className="p-8">
+              <div className="p-8 flex-1">
                 <h3 className="font-heading text-2xl font-semibold text-foreground mb-3">{project.title}</h3>
                 <p className="text-foreground/60 font-body mb-6 text-sm leading-relaxed">{project.desc}</p>
                 <div className="flex flex-wrap gap-2 text-xs font-semibold">
@@ -371,10 +396,10 @@ export default function App() {
               Bridging design and intelligence.
             </h2>
             <p className="text-background/70 font-body text-lg leading-relaxed mb-6">
-              We are a team of engineers, designers, and AI specialists united by a single goal: creating digital experiences that push boundaries.
+              We are a team of engineers, designers, and AI specialists united by a single goal: building things that actually move the needle for our clients.
             </p>
             <p className="text-background/70 font-body text-lg leading-relaxed">
-              Based at the intersection of technology and creativity, Mruka builds solutions that don't just look beautiful, but actively drive business forward through intelligent automation.
+              Mruka builds solutions that don't just look beautiful  they actively drive your business forward through intelligent automation.
             </p>
             <div className="mt-12 grid grid-cols-2 gap-8">
               <div>
@@ -396,7 +421,7 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="bg-background/10 backdrop-blur-md rounded-3xl p-8 border border-white/10"
             >
-              <h3 className="font-heading text-xl mb-2">Design-Led Polish</h3>
+              <h3 className="font-heading text-xl mb-2">Pixel-Perfect Design</h3>
               <p className="font-body text-sm text-background/70 leading-relaxed">Every pixel is placed with intention, ensuring your brand stands out in a crowded digital landscape.</p>
             </motion.div>
             <motion.div 
@@ -416,8 +441,8 @@ export default function App() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-background/10 backdrop-blur-md rounded-3xl p-8 border border-white/10 ml-0 md:ml-16"
             >
-              <h3 className="font-heading text-xl mb-2">Future-Proof Innovation</h3>
-              <p className="font-body text-sm text-background/70 leading-relaxed">Integrating the latest AI models to automate workflows, giving you an unfair advantage over competitors.</p>
+              <h3 className="font-heading text-xl mb-2">AI-First Thinking</h3>
+              <p className="font-body text-sm text-background/70 leading-relaxed">Integrating the latest AI models to automate workflows, so you move faster than your competition.</p>
             </motion.div>
           </div>
         </div>
@@ -430,13 +455,13 @@ export default function App() {
 
         <div className="max-w-4xl mx-auto text-center soft-glass-strong rounded-[2rem] p-12 md:p-16 border-white/40">
           <h2 className="text-4xl md:text-5xl font-heading font-medium text-foreground mb-6 tracking-tight">
-            Ready to optimize <br />your processes?
+            Ready to build <br />something great?
           </h2>
           <p className="opacity-80 font-body mb-10 text-lg max-w-xl mx-auto leading-relaxed text-foreground">
-            Get a free audit of your current digital infrastructure and discover how Mruka can elevate your business.
+            Tell us what you're building — we'll show you what's possible.
           </p>
           <a href="mailto:hello@mruka.agency" className="bg-[#2D3A31] text-white rounded-full px-8 py-3.5 font-heading text-sm font-semibold hover:shadow-lg transition-all inline-block hover:scale-[1.02] transform">
-            Get in Touch
+            Let's Talk
           </a>
         </div>
 

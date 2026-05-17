@@ -78,16 +78,16 @@
   }
 
   .blob-primary {
-    top: -10%;
-    right: -5%;
+    top: -100px;
+    right: -100px;
     width: 500px;
     height: 500px;
     background: #AFCFB5;
   }
 
   .blob-secondary {
-    bottom: -10%;
-    left: -5%;
+    bottom: -100px;
+    left: -100px;
     width: 400px;
     height: 400px;
     background: #F2E9E1;
